@@ -1,0 +1,8 @@
+<html>
+<head>
+<title><@placeholder=title@></title>
+</head>
+<body>
+<@placeholder=content@>
+</body>
+</html>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D4B5F3B8-3B10-44AA-B420-116CCE5631C3}</ProjectGuid>
+    <RootNamespace>luabind</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(BOOST_DIR);$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(BOOST_DIR);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../lua-5.1.1/include;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_USRDLL;LUABIND_BUILDING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../lua-5.1.1/include;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_USRDLL;LUABIND_BUILDING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\class.cpp" />
+    <ClCompile Include="..\..\src\class_info.cpp" />
+    <ClCompile Include="..\..\src\class_registry.cpp" />
+    <ClCompile Include="..\..\src\class_rep.cpp" />
+    <ClCompile Include="..\..\src\create_class.cpp" />
+    <ClCompile Include="..\..\src\error.cpp" />
+    <ClCompile Include="..\..\src\find_best_match.cpp" />
+    <ClCompile Include="..\..\src\function.cpp" />
+    <ClCompile Include="..\..\src\implicit_cast.cpp" />
+    <ClCompile Include="..\..\src\link_compatibility.cpp" />
+    <ClCompile Include="..\..\src\object_rep.cpp" />
+    <ClCompile Include="..\..\src\open.cpp" />
+    <ClCompile Include="..\..\src\overload_rep.cpp" />
+    <ClCompile Include="..\..\src\pcall.cpp" />
+    <ClCompile Include="..\..\src\ref.cpp" />
+    <ClCompile Include="..\..\src\scope.cpp" />
+    <ClCompile Include="..\..\src\stack_content_by_name.cpp" />
+    <ClCompile Include="..\..\src\weak_ref.cpp" />
+    <ClCompile Include="..\..\src\wrapper_base.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\lua-5.1.1\msvc\lua\lua.vcxproj">
+      <Project>{aa9ce244-9b47-4c97-91b5-bbcdc58b37dc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\luabind\adopt_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\back_reference.hpp" />
+    <ClInclude Include="..\..\include\luabind\back_reference_fwd.hpp" />
+    <ClInclude Include="..\..\include\luabind\class.hpp" />
+    <ClInclude Include="..\..\include\luabind\class_info.hpp" />
+    <ClInclude Include="..\..\include\luabind\config.hpp" />
+    <ClInclude Include="..\..\include\luabind\container_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\copy_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\dependency_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\calc_arity.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\call.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\call_function.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\call_member.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\call_operator_iterate.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\class_cache.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\class_registry.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\class_rep.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\constructor.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\construct_rep.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\convert_to_lua.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\debug.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\decorate_type.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\enum_maker.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\find_best_match.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\garbage_collector.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\get_overload_signature.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\get_signature.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\has_get_pointer.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\implicit_cast.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\is_indirect_const.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\link_compatibility.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\method_rep.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\most_derived.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\object_call.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\object_funs.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\object_rep.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\open.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\operator_id.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\other.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\overload_rep.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\overload_rep_base.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\pcall.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\pointee_sizeof.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\pointee_typeid.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\primitives.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\property.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\ref.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\signature_match.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\stack_utils.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\typetraits.hpp" />
+    <ClInclude Include="..\..\include\luabind\detail\yes_no.hpp" />
+    <ClInclude Include="..\..\include\luabind\discard_result_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\error.hpp" />
+    <ClInclude Include="..\..\include\luabind\from_stack.hpp" />
+    <ClInclude Include="..\..\include\luabind\function.hpp" />
+    <ClInclude Include="..\..\include\luabind\get_pointer.hpp" />
+    <ClInclude Include="..\..\include\luabind\handle.hpp" />
+    <ClInclude Include="..\..\include\luabind\iterator_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\luabind.hpp" />
+    <ClInclude Include="..\..\include\luabind\lua_include.hpp" />
+    <ClInclude Include="..\..\include\luabind\nil.hpp" />
+    <ClInclude Include="..\..\include\luabind\object.hpp" />
+    <ClInclude Include="..\..\include\luabind\open.hpp" />
+    <ClInclude Include="..\..\include\luabind\operator.hpp" />
+    <ClInclude Include="..\..\include\luabind\out_value_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\prefix.hpp" />
+    <ClInclude Include="..\..\include\luabind\raw_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\return_reference_to_policy.hpp" />
+    <ClInclude Include="..\..\include\luabind\scope.hpp" />
+    <ClInclude Include="..\..\include\luabind\value_wrapper.hpp" />
+    <ClInclude Include="..\..\include\luabind\weak_ref.hpp" />
+    <ClInclude Include="..\..\include\luabind\wrapper_base.hpp" />
+    <ClInclude Include="..\..\include\luabind\yield_policy.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

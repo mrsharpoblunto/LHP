@@ -1,0 +1,27 @@
+<@masterpage=Shared/site.master@>
+
+<@placeholder=title@>
+<%
+function Hello(name)
+	return "Hello " .. name .. "!\n"
+end
+
+function Title(name)
+	return "LHP::" .. name .. "!\n"
+end
+%>
+<%=Title("Test Page")%>
+<@endplaceholder@>
+
+<@placeholder=content@>
+<h1><%=Title("Test Page")%></h1>
+<%
+for i=1,10 do
+response:write(i .. ":" .. Hello(viewData.Value) .. "<br/>")
+end
+%>
+<form method="post" action="/Test/Submit">
+Enter your name: <input type="text" name="txt" />
+<input type="submit" value="Submit" />
+</form>
+<@endplaceholder@>

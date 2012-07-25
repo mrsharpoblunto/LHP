@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{0d509899-fa4e-465b-96ae-12e663a3dd2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{23829084-959b-4290-bf0f-534258190285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{ecd9c06d-2dab-4302-830a-c4afdb65998b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Shared">
+      <UniqueIdentifier>{c3ed4309-34d1-4b61-9589-f52a746e8e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Test">
+      <UniqueIdentifier>{e4e98076-28c8-45c3-a405-7dcfbcb016be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TestController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="TestModel.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestApplication.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestController.hpp">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="TestModel.hpp">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestApplication.hpp">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Views\Shared\site.master">
+      <Filter>Views\Shared</Filter>
+    </None>
+    <None Include="Content\Views\Test\index.lhp">
+      <Filter>Views\Test</Filter>
+    </None>
+  </ItemGroup>
+</Project>

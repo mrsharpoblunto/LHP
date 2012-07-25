@@ -38,6 +38,7 @@
     <ClCompile Include="..\src\ApplicationController.cpp" />
     <ClCompile Include="..\src\Connection.cpp" />
     <ClCompile Include="..\src\ControllerContext.cpp" />
+    <ClCompile Include="..\src\HtmlForm.cpp" />
     <ClCompile Include="..\src\HttpServer.cpp" />
     <ClCompile Include="..\src\IController.cpp" />
     <ClCompile Include="..\src\json.cpp" />

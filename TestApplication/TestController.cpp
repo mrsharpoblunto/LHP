@@ -5,7 +5,6 @@
 
 void TestController::Register(LHP::ApplicationController &controller)
 {
-	controller.RegisterDefaultControllerGetAction("Test","Index");
 	controller.RegisterControllerGetAction("Test","Index",&TestController::Index);
 	controller.RegisterControllerFormPostAction("Test","Submit",&TestController::Submit);
 }

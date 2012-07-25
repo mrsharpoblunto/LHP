@@ -1,0 +1,15 @@
+
+*.suo
+*.sdf
+*.opensdf
+/TestApplication/Release
+/TestApplication/Debug
+/Release
+/ipch
+/Debug
+/LHP/msvc/Release
+/LHP/msvc/Debug
+/lua-5.1.1/msvc/lua/Debug
+/lua-5.1.1/msvc/lua/Release
+/luabind-0.7/msvc/luabind/Debug
+/luabind-0.7/msvc/luabind/Release
